@@ -11,7 +11,8 @@ pub struct Guess {
      pub fn new(value: i32) -> Guess {
         if value < 1 || value > 100 {
             panic!(
-                "The secret number will be between 1 and 100, got {}."
+                "The secret number will be between 1 and 100, got {}",
+                value
             );
          }
          Guess {value}
@@ -26,21 +27,21 @@ pub struct Guess {
 
 
  fn main () {
-     println!(" Guess the number!")
+     println!(" Guess the number!");
 
-     let secret_number = rand::thread_rng().gen_range(1..101);
+     let secret_number = rand::rng().random_range(1..101);
 
      loop {
-         println!("Please input your guess. ")
+         println!("Please input your guess. ");
          let mut guess = String::new();
          io::stdin()
              .read_line(&mut guess)
-             .expect("Failed to read line")
+             .expect("Failed to read line");
         
         let guess: i32 = match guess.trim().parse() {
             Ok(num ) => num,
             Err(_) => continue,
-        }     
+        }  ;   
       
 
          Guess::new(guess);
