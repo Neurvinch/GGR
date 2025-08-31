@@ -96,8 +96,13 @@
     State(state): State<AppState>,
     Json(payload): Json<GuessRequest>
    ) -> Json<GuessResponse> {
-    
+     
+    let secret = *state.secret_number.lock().unwrap();
+
+      let result = if pa
    }
+
+
    
 
 
