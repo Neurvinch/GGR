@@ -116,7 +116,12 @@
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
-    println!("Secret number: {}", secret_number)
+    println!("Secret number: {}", secret_number);
+
+    let state = AppState {
+       secret_number:Arc::new(mutex::new(secret_number))
+    }
+
 
    }
 
