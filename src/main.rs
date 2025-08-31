@@ -100,8 +100,14 @@
     let secret = *state.secret_number.lock().unwrap();
 
       let result = if payload.guess < secret {
-          
-      }
+          "Too small!".to_string()
+      } else if payload.guess > secret {
+          "Too big!".to_string()
+      } else {
+          "You win!".to_string()
+      };
+
+      
    }
 
 
