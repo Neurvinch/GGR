@@ -85,6 +85,12 @@
     result: String,
    }
 
+   async fn get_secret(State(state) : State<AppState>) -> Json<i32> {
+
+    let secret = *state.secret_number.lock().unwrap();
+    Json(secret)
+   }
+
 
    
 
