@@ -99,7 +99,9 @@
      
     let secret = *state.secret_number.lock().unwrap();
 
-      let result = if pa
+      let result = if payload.guess < secret {
+          
+      }
    }
 
 
