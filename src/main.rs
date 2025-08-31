@@ -75,11 +75,16 @@
     secret_number : Arc<Mutex<i32>>,
    }  
    
-   #[derive(Deserialize)]
+   #[derive(Deserialize)] // json into struct
    struct GuessRequest {
     guess : i32,
    }
-   
+
+   #[derive(Serialize)] // struct into json 
+   struct GuessResponse {
+    result: String,
+   }
+
 
    
 
