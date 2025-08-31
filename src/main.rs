@@ -124,7 +124,16 @@
    
       let app = Router::new()
       .route("/guess", post(post_guess))
-      
+      .route("/secret", get(get_secret))
+      .with_state(state);
+
+      println!("Listening on {}", addr);
+
+
+      axum::Server::bind(&addr)
+      .serve(app.into_make_service())
+      .await
+      .unwrap();          
 
    }
 
