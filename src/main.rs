@@ -70,6 +70,15 @@
 
    use std::{net::SocketAddr, sync::{Arc, Mutex}};
 
+   #[derive(Clone)] 
+   struct AppState {
+    secret_number : Arc<Mutex<i32>>,
+   }  
+   
+   #[derive(Deserialize)]
+   struct GuessRequest {
+    guess : i32,
+   }
    
 
    
