@@ -121,7 +121,10 @@
     let state = AppState {
        secret_number:Arc::new(mutex::new(secret_number))
     }
-
+   
+      let app = Router::new()
+      .route("/guess", post(post_guess))
+      
 
    }
 
