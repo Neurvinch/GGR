@@ -66,7 +66,7 @@
 
 
    use rand::Rng;
-   use serde::{Deserialize, Serialize}
+   use serde::{Deserialize, Serialize};
 
    use std::{net::SocketAddr, sync::{Arc, Mutex}};
 
@@ -120,7 +120,7 @@
 
     let state = AppState {
        secret_number:Arc::new(mutex::new(secret_number))
-    }
+    };
    
       let app = Router::new()
       .route("/guess", post(post_guess))
